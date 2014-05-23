@@ -1,10 +1,11 @@
 <?php
-	$client_id = 'demo';
-    $username = 'demo';
-    $password = 'demo';
+
+    $client_id  = 'demo';
+    $username   = 'demo';
+    $password   = 'demo';
  
-    $to = '9841000000';
-    $text = 'I am trying the Sparrow SMS API using a Demo account';
+    $to     = '9841000000';
+    $text   = 'I am trying the Sparrow SMS API using a Demo account';
 
 	// STEP 1
     // build the url
