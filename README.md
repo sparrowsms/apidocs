@@ -3,12 +3,13 @@ Sparrow SMS API Documentation
 Sparrow SMS is one of the leading VAS providers in Nepal. This repo contains the API documentation including the examples for different platforms.
 
 How to signup
-=============
+-------------
 Please visit https://api.sparrowsms.com/platform/login/signup
 
 MT (Outgoing) API Endpoint
-==========================
-http://api.sparrowsms.com/call_in.php
+--------------------------
+URL : http://api.sparrowsms.com/call_in.php
+
 Required parameters
 * username
 * password
