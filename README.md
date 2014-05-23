@@ -27,3 +27,8 @@ Optional parameters
 Supported HTTP Methods
 * GET
 * POST
+
+Complete Documentation (Read the docs)
+--------------------------------------
+Please visit Read the docs for complete documentation.
+http://sparrow-sms-api-documentation.readthedocs.org/en/latest/
