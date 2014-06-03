@@ -8,5 +8,3 @@
 Sparrow SMS provides both **MT** and **MO** APIs and supports integration when required.
 
 Current version of the API _(v1)_ supports simple HTTP based requests.
-
-_PS: The newer version with RESTFUL support and SDK for different platforms is under development and will be released soon._

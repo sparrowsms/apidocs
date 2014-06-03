@@ -1,2 +1,6 @@
 site_name: Sparrow SMS API Documentation
 theme: readthedocs
+pages:
+- [index.md, Home]
+- [documentation.md, Documentation]
+- [examples.md, Examples]
