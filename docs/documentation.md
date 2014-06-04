@@ -1,4 +1,5 @@
-# Sparrow SMS API Documentation
+# Sparrow SMS API Documentation  
+`Last updated - 2014.06.04`
 
 For signup or account request visit [api.sparrowsms.com](http://api.sparrowsms.com/).
 
