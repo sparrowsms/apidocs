@@ -31,4 +31,4 @@ Supported HTTP Methods
 Complete Documentation (Read the docs)
 --------------------------------------
 Please visit Read the docs for complete documentation.
-http://sparrowsms.readthedocs.org/en/latest/
+http://sparrowsms.readthedocs.org
