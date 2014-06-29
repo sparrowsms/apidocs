@@ -4,6 +4,7 @@ repo_url: http://github.com/sparrowsms/apidocs
 site_description: Sparrow SMS Official Developers API.
 site_author: Sparrow SMS (@sparrowsms)
 theme: readthedocs
+include_nav: True
 pages:
  - [index.md, Home]
  - [documentation.md, Documentation]
