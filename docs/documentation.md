@@ -1,45 +1,28 @@
-# Sparrow SMS API Documentation  
-`Last updated - 2014.06.04`
-
 For signup or account request visit [api.sparrowsms.com](http://api.sparrowsms.com/).
 
-## API Endpoint (MT _aka._ Outgoing)
-
+# API Endpoints  
+Sparrow SMS receives requests via a single standard endpoint as below:  
 __URL__ : [api.sparrowsms.com/call_in.php](http://api.sparrowsms.com/call_in.php)  
-_(#deprecated)_
+_(#deprecated - will be removed very soon.)_ 
 
 __URL__ : [api.sparrowsms.com/v1](http://api.sparrowsms.com/v1)  
-   _(#revised)_
-  
+   _(#recommended)_
 
-## Required parameters
+# Intents
+Intents are the services available via the Sparrow SMS API endpoint. Each intent is uniquely identified by the `intent` parameter supplied during request.
 
-###`client_id`
-    supplied during account signup  
+Following intents are available currently.  
+### `	` - ?intent=sms  
+Send SMS to the intended recipient  
+default intent. (if intent parameter is not supplied, it is assumed to be sms intent)  
+[check documentation for this intent](/intent_sms)
 
-###`username`
-	supplied during account signup  
+### `	` - ?intent=credits  
+Check available, remaining credits and expiry date for the credits [check documentation for this intent](/intent_credits)
 
-###`password`
-	supplied during account signup  
+### `	` - ?intent=simulate _(proposed)_  
+Do no send the actual request, simulate. (will generate `curl` commands)
 
-###`to`
-	recipient number  
-
-###`text`
-	message to be sent  
-
-## Optional Parameters
-###`from`
-	required only if mulitple shortcodes are assigned to an account  
-
-###`identity`
-	required only if multiple alphanumeric sources are assigned to an account  
-
-###`subaccount`
-	Can be used for reporting purpose. This value will be stored in logs as it is.  
-
-###`tag`
-	Can be used for reporting purpose. This value will be stored in logs as it is.
-
-
+### `	` - ?intent=topup _(proposed)_  
+Send a topup request with an the topup amount.
+ 
