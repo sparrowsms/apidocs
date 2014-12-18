@@ -1,19 +1,17 @@
-#Sparrow SMS API Documentation
+# Sparrow SMS API 2.0 Documentation
 
-`Last updated - 24th July, 2014`
+`Last updated - 18th December, 2014`
 
 **Sparrow SMS** is a leading VAS Provider based in Nepal. It currently provides SMS Gateway connectivity with the telecom operators of Nepal, currently supporting the following operators
 
-`1. Nepal Telecom`  
+`1. Nepal Telecom (GSM + CDMA)`  
 `2. Ncell`  
 `3. United Telecom`  
 `4. Smart Telecom`  
 
 Sparrow SMS provides both **MT** and **MO** APIs and supports with integration when required.
 
-Current version of the API _`(v1)`_ supports simple HTTP based requests.
-
-_PS: The newer version with RESTFUL support and SDK for different platforms is under development and will be released soon._
+`(Version 2.0)` API supports RESTFUL support.
 
 [Check the latest API Documentation](documentation)
 
