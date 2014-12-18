@@ -1,11 +1,44 @@
-# Examples (`intent=credits`)
+# Examples (Credits)
 
-## Check credit balance for an account
-    curl -s 'http://api.sparrowsms.com/v1' -d 'client_id=demo&username=demo&password=demo&intent=credits'
+## Curl
 
-### Expected parameters are :  
+```
 
-    - client_id
-    - username
-    - password
-    - intent=credits
+    curl -s http://api.sparrowsms.com/v2/credit \
+        -F token='<token-provided>' \
+
+```
+
+-------
+
+## Php
+
+```
+
+    $api_url = "http://api.sparrowsms.com/v2/credit".
+        http_build_query(array(
+            'token' => '<token-provided>',
+    
+    $response = file_get_contents($api_url);
+    
+
+```
+
+-------
+
+## Python
+
+```python
+    
+    import requests
+
+    r = requests.get(
+            "http://api.sparrowsms.com/v2/credit",
+            params={'token' : '<token-provided>'})
+
+    status_code = r.status_code
+    response = r.text
+    response_json = r.json()
+    
+
+```

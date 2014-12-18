@@ -1,50 +1,103 @@
-# Examples (`intent=sms`)
-As explained earlier, `intent=sms` is the default intent and is optional parameter. Following are the examples of different cases for `sms` intent
+# Examples (Outgoing SMS)
 
-## Basic Request
-    curl -s 'http://api.sparrowsms.com/v1' -d 'client_id=demo&username=demo&password=demo&to=98xxxxxxxx&text=I+am+testing+Sparrow+SMS+API.'
+## Curl
 
-### Expected parameters are :  
+```
 
-    - client_id
-    - username
-    - password
-    - to
-    - text
+    curl -s http://api.sparrowsms.com/v2/sms \
+        -F token='<token-provided>' \
+        -F from='<Identity>' \
+        -F to='<comma_separated 10-digit mobile numbers>' \
+        -F text='SMS Message to be sent'
 
-## If mutiple shortcodes / routes provided to your account
-    curl -s 'http://api.sparrowsms.com/v1' -d 'client_id=demo&username=demo&password=demo&from=5001&to=98xxxxxxxx&text=I+am+testing+Sparrow+SMS+API.'
+```
 
-### Expected parameters are :
+-------
 
-    - client_id
-    - username
-    - password
-    - to
-    - text
-    - from
+## Php
 
-## If your account has multiple alphanumeric identities allocated
+**GET Method: **
 
-### Expected Parameters : 
+```
+
+    $api_url = "http://api.sparrowsms.com/v2/sms".
+        http_build_query(array(
+            'token' => '<token-provided>',
+            'from'  => '<Identity>',
+            'to'    => '<comma_separated 10-digit mobile numbers>',
+            'text'  => 'SMS Message to be sent'));
     
-    client_id
-    username
-    password
-    to
-    text
-    identity
-
-
-## If any system is unable to submit client_id parameter
-Join the `client_id` and `username` parameters with a `colon : ` and supply as `username`
-
-For example: if `client_id` = `apisignup`, and `username` = `namaste`
-replace the `username` as `apisignup:namaste` and make the request. Remove the `client_id` parameter from the request.
+    $response = file_get_contents($api_url);
     
-    curl -s 'http://api.sparrowsms.com/v1' -d 'username=apisignup:namaste&password=demo&to=98xxxxxxxx&text=I+am+testing+Sparrow+SMS+API.'
 
-### Expected Parameters : 
+```
+
+**POST Method: **
+
+```
+
+    $args = http_build_query(array(
+        'token' => '<token-provided>',
+        'from'  => '<Identity>',
+        'to'    => '<comma_separated 10-digit mobile numbers>',
+        'text'  => 'SMS Message to be sent'));
     
-    username as client_id:username (combined)
-    password
+    $url = "http://api.sparrowsms.com/v2/sms";
+
+    # Make the call using API.
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_POSTFIELDS,$args);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+    // Response
+    $response = curl_exec($ch);
+    $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    curl_close($ch);
+    
+
+```
+
+-------
+
+## Python
+
+**GET Method: **
+
+```python
+    
+    import requests
+
+    r = requests.get(
+            "http://api.sparrowsms.com/v2/sms",
+            params={'token' : '<token-provided>',
+                  'from'  : '<Identity>',
+                  'to'    : '<comma_separated 10-digit mobile numbers>',
+                  'text'  : 'SMS Message to be sent'})
+
+    status_code = r.status_code
+    response = r.text
+    response_json = r.json()
+    
+
+```
+
+**POST Method: **
+
+```python
+    
+    import requests
+
+    r = requests.post(
+            "http://api.sparrowsms.com/v2/sms",
+            data={'token' : '<token-provided>',
+                  'from'  : '<Identity>',
+                  'to'    : '<comma_separated 10-digit mobile numbers>',
+                  'text'  : 'SMS Message to be sent'})
+                  
+    status_code = r.status_code
+    response = r.text
+    response_json = r.json()
+
+```
