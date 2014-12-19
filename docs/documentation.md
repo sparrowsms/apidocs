@@ -1,28 +1,20 @@
-For signup or account request visit [api.sparrowsms.com](http://api.sparrowsms.com/).
+You can signup or login to the dashboard using following link:
+[http://beta.sparrowsms.com](http://beta.sparrowsms.com/)
 
-# API Endpoints  
+# API Endpoint
 Sparrow SMS receives requests via a single standard endpoint as below:  
-__URL__ : [api.sparrowsms.com/call_in.php](http://api.sparrowsms.com/call_in.php)  
-_(#deprecated - will be removed very soon.)_ 
 
-__URL__ : [api.sparrowsms.com/v1](http://api.sparrowsms.com/v1)  
-   _(#recommended)_
+**URL** : [api.sparrowsms.com/v2](http://api.sparrowsms.com/v2)  
 
-# Intents
-Intents are the services available via the Sparrow SMS API endpoint. Each intent is uniquely identified by the `intent` parameter supplied during request.
+# 1.Outgoing
+Our outgoing API enables you to send sms, get credits details.
 
-Following intents are available currently.  
-### `	` - ?intent=sms  
-Send SMS to the intended recipient  
-default intent. (if intent parameter is not supplied, it is assumed to be sms intent)  
-[check documentation for this intent](/intent_sms)
+## i. Send SMS
+Outgoing or Push or MT (Mobile Terminated) messages are sent from Sparrow SMS Gateway server to the intended recipients mobile phone.  
 
-### `	` - ?intent=credits  
-Check available, remaining credits and expiry date for the credits [check documentation for this intent](/intent_credits)
+[**Check documentation **](/outgoing_sendsms/)
 
-### `	` - ?intent=simulate _(proposed)_  
-Do no send the actual request, simulate. (will generate `curl` commands)
+## ii. Credits
+Check available, consumed credits in Sparrow SMS account
 
-### `	` - ?intent=topup _(proposed)_  
-Send a topup request with an the topup amount.
- 
+[**Check documentation **](/outgoing_credits/)
