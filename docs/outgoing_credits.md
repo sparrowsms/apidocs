@@ -11,7 +11,7 @@ It can be used to know about the available credits, consumed credits.
 ## Method
 ```
 
-    /credit
+    /credit/
 
 ```
 ## Parameters
