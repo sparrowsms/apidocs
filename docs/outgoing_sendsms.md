@@ -12,7 +12,7 @@
 ## Method
 ```
 
-    /sms
+    /sms/
 
 ```
 ## Parameters
