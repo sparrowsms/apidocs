@@ -20,7 +20,7 @@
 
 ```
 
-    $api_url = "http://api.sparrowsms.com/v2/sms".
+    $api_url = "http://api.sparrowsms.com/v2/sms?".
         http_build_query(array(
             'token' => '<token-provided>',
             'from'  => '<Identity>',
