@@ -13,6 +13,11 @@ Sparrow SMS provides both **MT** and **MO** APIs and supports with integration w
 
 `(Version 2.0)` API supports RESTFUL support.
 
+##Contact Details:
+**Email: marketing@janakitech.com**  
+**Phone: 01-5522942 / 9802005008**
+__ __
+
 [Check the latest API Documentation](documentation)
 
 [Jump to Examples](examples)
