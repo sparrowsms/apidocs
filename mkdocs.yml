@@ -12,6 +12,8 @@ pages:
  - ['documentation.md', 'Documentation']
  - ['outgoing_sendsms.md', 'Push SMS (MT)']
  - ['outgoing_credits.md', 'Credits']
+ - ['incoming.md', 'Pull SMS (MO)']
  - ['examples.md', 'Examples']
  - ['examples_outgoing.md', 'Push SMS (MT) Examples']
  - ['examples_credits.md', 'Credits Examples']
+ - ['examples_incoming.md', 'Pull SMS (MO) Examples']
