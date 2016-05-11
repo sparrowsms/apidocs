@@ -32,6 +32,16 @@
 
 ```
 
+**Example: **
+
+```
+http_build_query(array(
+'token' => 'aslkd1232adkadsf',
+'from' => ‘Demo',
+'to' => ‘9802005009',
+'text' => ‘Hello! This is a test message from Sparrow SMS'));
+```
+
 **POST Method: **
 
 ```
