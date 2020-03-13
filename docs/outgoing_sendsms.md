@@ -73,4 +73,4 @@
 
 ```
 
-[**Proceed to examples**](/examples_outgoing/)
+[**Proceed to examples**](../examples_outgoing/)

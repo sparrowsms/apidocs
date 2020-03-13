@@ -43,4 +43,4 @@ Second Keyword of SMS sent by user is called Sub Keyword. Its optional and depen
 ## Response
 URL must process the request and send text response of maximum 160 characters with status code 200 or 202. Incase of any other response code, default reply will be sent to user as SMS reply.
 
-[**Proceed to examples**](/examples_incoming/)
+[**Proceed to examples**](../examples_incoming/)
