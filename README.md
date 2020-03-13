@@ -2,6 +2,8 @@ Sparrow SMS API Documentation
 =============================
 Sparrow SMS is one of the leading VAS providers in Nepal. This repo contains the API documentation including the examples for different platforms.
 
+[![Documentation Status](https://readthedocs.org/projects/sparrowsms/badge/?version=latest)](https://sparrowsms.readthedocs.io/en/latest/?badge=latest)
+
 How to signup
 -------------
 Please visit https://api.sparrowsms.com/platform/login/signup
