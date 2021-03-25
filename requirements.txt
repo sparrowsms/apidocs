@@ -7,6 +7,6 @@ Markdown==3.2.1
 MarkupSafe==1.1.1
 mkdocs==1.1
 nltk==3.4.5
-PyYAML==5.3
+PyYAML==5.4
 six==1.14.0
 tornado==6.0.4
