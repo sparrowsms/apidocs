@@ -3,7 +3,7 @@ site_url: http://api.sparrowsms.com
 repo_url: http://github.com/sparrowsms/apidocs
 site_description: Sparrow SMS Official Developers API.
 site_author: Sparrow SMS (@sparrowsms)
-theme: 'material'
+theme: material
 nav:
   - Home: 'index.md'
   - Documentation: 'documentation.md'
@@ -14,3 +14,5 @@ nav:
   - Push SMS (MT) Examples: 'examples_outgoing.md'
   - Credits Examples: 'examples_credits.md'
   - Pull SMS (MO) Examples: 'examples_incoming.md'
+extra_css:
+  - stylesheets/extra.css
