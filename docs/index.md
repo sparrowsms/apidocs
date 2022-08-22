@@ -24,16 +24,27 @@
 <div style='clear:both'></div>
 <hr />
 
-## API Support and Standard
+## SMS API
 Sparrow SMS provides both **MT** and **MO** APIs and supports with integration when required.
 Sparrow SMS Bulk SMS API (Version 2.0) is a RESTful API for sending Bulk SMS in Nepal.
+
+[Explore the SMS API Documentation](sms/documentation)
+
+
+## Mockingbird Enterprise Messaging Suite
+Sparrow SMS has recently launched its [enterprise messaging suite (Mockingbird)](https://Mockingbird.sparrowsms.com) for the following services
+
+- Viber Business Messaging service for Nepal
+- Viber Bot and BOT applications
+- Whatsapp Messaging service (Planned)
+
+[Explore the Viber Business Messaging API Documentation](viber/)
 
 ##Contact Details:
 **Email: marketing@janakitech.com**  
 **Phone: 01-5422942 / 9802005008**
 __ __
 
-[Check the latest API Documentation](documentation)
 
 
 

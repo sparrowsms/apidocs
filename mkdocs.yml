@@ -6,13 +6,18 @@ site_author: Sparrow SMS (@sparrowsms)
 theme: material
 nav:
   - Home: 'index.md'
-  - Documentation: 'documentation.md'
-  - Push SMS (MT): 'outgoing_sendsms.md'
-  - Credits: 'outgoing_credits.md'
-  - Pull SMS (MO): 'incoming.md'
-  - Examples: 'examples.md'
-  - Push SMS (MT) Examples: 'examples_outgoing.md'
-  - Credits Examples: 'examples_credits.md'
-  - Pull SMS (MO) Examples: 'examples_incoming.md'
+  - SMS API:
+    - Documentation: 'sms/documentation.md'
+    - Push SMS (MT): 'sms/outgoing_sendsms.md'
+    - Credits: 'sms/outgoing_credits.md'
+    - Pull SMS (MO): 'sms/incoming.md'
+    - Examples: 'sms/examples.md'
+    - Push SMS (MT) Examples: 'sms/examples_outgoing.md'
+    - Credits Examples: 'sms/examples_credits.md'
+    - Pull SMS (MO) Examples: 'sms/examples_incoming.md'
+  - Viber API:
+    - Viber Services in Nepal: 'viber/documentation.md'
+    - Viber Business Messaging : 'viber/business-message.md'
+    - Viber BOT API : 'viber/viber-bot.md'
 extra_css:
   - stylesheets/extra.css
