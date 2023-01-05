@@ -44,7 +44,6 @@ POST
 __Payload__
 ```
 {
-    "username": "<username>",
     "api_token": "<api-token-obtained-from-generator>",
     "partner_token": "<partner-token-provided>"
 }
@@ -58,7 +57,8 @@ __Sample Response__
 {
    "data": {
        "message": "Success",
-       "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9"
+       "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9",
+       "expires_on": "2022-08-21T18:00:55.400174+05:45",
    },
    "meta": {},
    "result": "00",
