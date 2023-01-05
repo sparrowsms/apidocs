@@ -19,13 +19,56 @@
 
 
 ## Authorization Headers
-`Authorization : Token xxxxxxxxxxxxxxxxxxxx`
+`Authorization : Bearer xxxxxxxxxxxxxxxxxxxx`
 
-## Authentication 
-(subjected to change)
->Receiving the authorization Token (API Authentication)
->Token shall be provided separately from the login dashboard.
+Bearer token is required in the headers for the API authentication. To receive the Bearer authorization token, the API token and Partner token shall be required. 
 
+|--|--|--
+|API Token | Can be generated from the account management portal | Multiple tokens can be generated per user
+|Partner Token | Provided separately during agreement.  | Persistent and remains same throughout the account
+
+
+## The Authentication Flow
+### Step 1
+Login to the portal https://mockingbird.sparrowsms.com with your account login credentials
+ Navigate to the Token Management and create / retrieve a token
+
+### Step 2
+Make an API request as below. 
+__Endpoint__
+`{{URL}}v1/autho/apitoken/login/`
+__Method__
+POST
+
+__Payload__
+```
+{
+    "username": "<username>",
+    "api_token": "<api-token-obtained-from-generator>",
+    "partner_token": "<partner-token-provided>"
+}
+```
+__Expected response__
+JWT Token
+__JWT Token expiry__
+24 hours
+__Sample Response__
+```
+{
+   "data": {
+       "message": "Success",
+       "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9"
+   },
+   "meta": {},
+   "result": "00",
+   "status": "OK"
+}
+```
+
+### Step 3
+For any other APIs, the Bearer Token received from above request shall be used as Authorization Header argument
+        
+    
 ### Dashboard Login
 [https://mockingbird.sparrowsms.com](https://mockingbird.sparrowsms.com)
 
