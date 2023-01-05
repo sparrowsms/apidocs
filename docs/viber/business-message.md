@@ -1,6 +1,6 @@
 # Viber Business Messaging service in Nepal
 
-`Last Updated - 18th August, 2022 Version 1.0.2`
+`Last Updated - 5th January, 2023 Version 1.0.3`
 
 ## API Endpoints
 
