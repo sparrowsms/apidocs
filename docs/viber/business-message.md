@@ -87,7 +87,7 @@ All business accounts will be able to send any of the following message types ba
 {
    "data"  : {
        "text":  "",
-       "image": “”
+       "image": ""
     }, 
     "action" : {
        "url" : "",
@@ -95,8 +95,8 @@ All business accounts will be able to send any of the following message types ba
        "filename": ""
    }, 
    "session" : {
-       “sender_name”: “”,
-       “tag”: [“tag1”, “tag2”], 
+       "sender_name": "",
+       "tag": ["tag1", "tag2"], 
        "recipients": [  … …  … ] 
    }
 }
