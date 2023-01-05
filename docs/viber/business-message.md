@@ -23,6 +23,7 @@
 
 Bearer token is required in the headers for the API authentication. To receive the Bearer authorization token, the API token and Partner token shall be required. 
 
+|Token Type| Desc | Token Property|
 |--|--|--|
 |API Token | Can be generated from the account management portal | Multiple tokens can be generated per user |
 |Partner Token | Provided separately during agreement.  | Persistent and remains same throughout the account |
