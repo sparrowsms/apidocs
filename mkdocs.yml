@@ -16,8 +16,10 @@ nav:
     - Credits Examples: 'sms/examples_credits.md'
     - Pull SMS (MO) Examples: 'sms/examples_incoming.md'
   - Viber API:
-    - Viber Services in Nepal: 'viber/documentation.md'
-    - Viber Business Messaging : 'viber/business-message.md'
+    # - Viber Services in Nepal: 'viber/documentation.md'
+    - Authentication Flow : 'viber/authentication-flow.md'    
+    - Business Messaging : 'viber/business-message.md'
+    - DLR Reports : 'viber/dlr.md'
     - Viber BOT API : 'viber/viber-bot.md'
 extra_css:
   - stylesheets/extra.css
