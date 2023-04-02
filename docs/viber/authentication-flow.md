@@ -2,7 +2,6 @@
 
 __API Endpoint__
 
-- https://mockingbird-api.sparrowsms.com/ (Deprecated)
 - https://ent-api.sparrowsms.com/
 
 __Dashboard__
