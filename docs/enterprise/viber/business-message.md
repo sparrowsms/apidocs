@@ -6,7 +6,7 @@
 
 |Environment|URL|
 |--|--|
-|Production|https://mockingbird-api.sparrowsms.com/v1/viber/|
+|Production|https://ent-api.sparrowsms.com/v1/viber/|
 |Sandbox|Coming soon|
 
 
