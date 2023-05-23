@@ -185,16 +185,17 @@ DATA_ERROR| 11| 400| Message Sending Failed
 
 ### Message Types
 *(subjected to availability as per the carrier and destination)*
+
 |SN|msg_type|description|
 |--|--|--|
-|1| |Plain text (GSM 3.38 Character encoding)
-|2| |Flash (GSM 3.38 Character encoding)
-|3| |Unicode
-|4| |Reserved
-|5| |WAP Push
-|6| |Plain text (ISO-8859-1 Character encoding)
-|7| |Unicode Flash
-|8| |Flash (ISO-8859-1 Character encoding)
+|1| plain |Plain text (GSM 3.38 Character encoding)
+|2| flash |Flash (GSM 3.38 Character encoding)
+|3| unicode |Unicode
+|4| reserved reserved|Reserved
+|5| wap |WAP Push
+|6| plain_iso |Plain text (ISO-8859-1 Character encoding)
+|7| uniflash |Unicode Flash
+|8| flash_iso |Flash (ISO-8859-1 Character encoding)
 
 <!-- dlr (integer): Specifies whether the delivery report is required for each message. Use one of the following values:
 0: No delivery report required
