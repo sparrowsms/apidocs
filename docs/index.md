@@ -31,14 +31,16 @@ Sparrow SMS Bulk SMS API (Version 2.0) is a RESTful API for sending Bulk SMS in 
 [Explore the SMS API Documentation](sms/documentation)
 
 
-## Mockingbird Enterprise Messaging Suite
-Sparrow SMS has recently launched its [enterprise messaging suite (Mockingbird)](https://Mockingbird.sparrowsms.com) for the following services
+## Enterprise Messaging Suite
+Sparrow SMS has recently launched its [enterprise messaging suite](https://ent.sparrowsms.com) for the following services
 
-- Viber Business Messaging service for Nepal
-- Viber Bot and BOT applications
+- [Viber Business Messaging service for Nepal](enterprise/viber/)
+- [International SMS](enterprise/international-sms)
+<!-- - [SecondFactor as Service](enterprise/secondfactor) -->
+- Viber Bot and BOT applications (W.I.P)
 - Whatsapp Messaging service (Planned)
 
-[Explore the Viber Business Messaging API Documentation](viber/)
+[Explore the Enterprise Messaging API Documentation](enterprise/)
 
 ##Contact Details:
 **Email: marketing@janakitech.com**  
