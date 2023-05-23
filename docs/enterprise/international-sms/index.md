@@ -51,11 +51,9 @@ The payload will follow the syntax similar to Viber Messaging.
   
   An example of a US number in the E.164 format is __+161000000000__
   
-  Similary, a Nepali Number in the E.164 format is __+977 98012xxxxx__
-
-- __Dashes__ : The digits can be separated with dashes and the dashes will be ignored. eg. __+977-980-xxx-xxxx__
+- __Dashes__ : The digits can be separated with dashes and the dashes will be ignored. eg. __+91-980-xxx-xxxx__
 - __Spaces__ : The digits can also be separated with spaces, and the spaces will also be ignored. 
-- __Parenthesis__ : Any parenthesis in the numbers will also be removed. eg. __+977-(1)-(5522942)__
+- __Parenthesis__ : Any parenthesis in the numbers will also be removed. eg. __+91-(1)-(5522942)__
 
 
 ## Response
