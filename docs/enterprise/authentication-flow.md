@@ -69,3 +69,13 @@ To receive a partner_token, API agreement needs to be made with the company. One
 
 However, in case of api_token, multiple tokens can be generated from the portal as per the use case required. 
 
+## Error Messages
+|Error Message| Desc | Resolution|
+|--|--|--|
+|Invalid Partner Token | The partner token input is incorrectly typed or doesn't exist at all | Verify the partner token |
+|Must include "partner_token" and "api_token" | One of the tokens is missing in the input | Verify the parameters |
+|Account is Expired| Partner token is valid, but the partner account is already expired.| Please talk to business / support for renewal process|
+|Invalid API Token|Partner token is valid, API Token is not| |
+|API Token Expired|API Token expiry time exceeded.| Generate again from the portal|
+|Unable to log in with provided credentials.|Credentails invalid| Please recheck both api_token and partner_token |
+|Invalid User|Account is no longer active|Please contact support for any sales / business related queries|

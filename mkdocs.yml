@@ -18,6 +18,7 @@ nav:
   - Enterprise Messaging Suite:
     # - Viber Services in Nepal: 'viber/documentation.md'
     - Authentication Flow : 'enterprise/authentication-flow.md'    
+    - Authentication Errors: 'enterprise/authentication-flow/#error-messages'
     - Viber Messaging: 
       - Business Messaging : 'enterprise/viber/business-message.md'
       - DLR Reports : 'enterprise/viber/dlr.md'
