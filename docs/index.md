@@ -2,7 +2,7 @@
 
 `Last updated - 13th March, 2020`
 
-<span style='padding:1em;margin:0 1em 0 0; display:inline-block;float:left; width:250px;border:1px solid lightgrey;'>
+<span style='padding:1em;margin:0 1em 0 0; display:inline-block;float:left; width:250px;border:1px solid lightgrey; style='display:none''>
 	<span style='padding:1em; display:block; background:lightgrey; font-size:1.2em; line-height:1.5em;'>
 		<img src="https://sparrowsms.com//wp-content/uploads/2021/11/Sparrow-SMS-Logo-Final.webp" width="100" style='display:block;margin-bottom:0.5em;' />
 	Login or Create Account for <strong>free</strong>
@@ -13,6 +13,8 @@
 </span>
 
 
+
+<img src="https://sparrowsms.com//wp-content/uploads/2021/11/Sparrow-SMS-Logo-Final.webp" width="250" style='display:block;margin-bottom:0.5em;' />
 
 **Sparrow SMS** is a leading VAS Provider based in Nepal. It currently provides SMS Gateway connectivity with the telecom operators of Nepal, currently supporting the following operators
 
