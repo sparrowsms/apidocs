@@ -1,0 +1,1337 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Sparrow SMS Official Developers API.">
+      
+      
+        <meta name="author" content="Sparrow SMS (@sparrowsms)">
+      
+      
+        <link rel="canonical" href="http://api.sparrowsms.com/enterprise/viber/business-message/">
+      
+      
+        <link rel="prev" href="../../authentication-flow/">
+      
+      
+        <link rel="next" href="../dlr/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.1">
+    
+    
+      
+        <title>Business Messaging - Sparrow SMS</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.72749a73.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#viber-business-messaging-service-in-nepal" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Sparrow SMS" class="md-header__button md-logo" aria-label="Sparrow SMS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sparrow SMS
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Business Messaging
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="http://github.com/sparrowsms/apidocs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Sparrow SMS" class="md-nav__button md-logo" aria-label="Sparrow SMS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Sparrow SMS
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="http://github.com/sparrowsms/apidocs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SMS API
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            SMS API
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sms/documentation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Documentation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sms/outgoing_sendsms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Push SMS (MT)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sms/outgoing_credits/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Credits
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sms/incoming/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pull SMS (MO)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sms/examples/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Examples
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sms/examples_outgoing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Push SMS (MT) Examples
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sms/examples_credits/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Credits Examples
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sms/examples_incoming/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pull SMS (MO) Examples
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Enterprise Messaging Suite
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Enterprise Messaging Suite
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../authentication-flow/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Authentication Flow
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../authentication-flow/#error-messages" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Authentication Errors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
+        
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Viber Messaging
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Viber Messaging
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Business Messaging
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Business Messaging
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#api-endpoints" class="md-nav__link">
+    API Endpoints
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#available-apis" class="md-nav__link">
+    Available APIs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-types" class="md-nav__link">
+    Message types
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#full-data-payload" class="md-nav__link">
+    Full Data Payload
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+    <nav class="md-nav" aria-label="Description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#coming-soon" class="md-nav__link">
+    Coming soon
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sms-fallback-coming-soon" class="md-nav__link">
+    SMS Fallback (Coming soon)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#response" class="md-nav__link">
+    Response
+  </a>
+  
+    <nav class="md-nav" aria-label="Response">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#success-response" class="md-nav__link">
+    Success Response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-response" class="md-nav__link">
+    Error Response
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#campaign-reports" class="md-nav__link">
+    Campaign Reports
+  </a>
+  
+    <nav class="md-nav" aria-label="Campaign Reports">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#response-format" class="md-nav__link">
+    Response Format
+  </a>
+  
+    <nav class="md-nav" aria-label="Response Format">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aggregated-summary-campaignreportuuid" class="md-nav__link">
+    Aggregated Summary /campaign/report/:uuid
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aggregated-summary-campaignreportuuiddelivered" class="md-nav__link">
+    Aggregated Summary /campaign/report/:uuid/delivered
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aggregated-summary-campaignreportuuidfailed" class="md-nav__link">
+    Aggregated Summary /campaign/report/:uuid/failed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dlr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DLR Reports
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../secondfactor-as-service/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SecondFactor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../international-sms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    International SMS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#api-endpoints" class="md-nav__link">
+    API Endpoints
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#available-apis" class="md-nav__link">
+    Available APIs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-types" class="md-nav__link">
+    Message types
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#full-data-payload" class="md-nav__link">
+    Full Data Payload
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+    <nav class="md-nav" aria-label="Description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#coming-soon" class="md-nav__link">
+    Coming soon
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sms-fallback-coming-soon" class="md-nav__link">
+    SMS Fallback (Coming soon)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#response" class="md-nav__link">
+    Response
+  </a>
+  
+    <nav class="md-nav" aria-label="Response">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#success-response" class="md-nav__link">
+    Success Response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-response" class="md-nav__link">
+    Error Response
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#campaign-reports" class="md-nav__link">
+    Campaign Reports
+  </a>
+  
+    <nav class="md-nav" aria-label="Campaign Reports">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#response-format" class="md-nav__link">
+    Response Format
+  </a>
+  
+    <nav class="md-nav" aria-label="Response Format">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aggregated-summary-campaignreportuuid" class="md-nav__link">
+    Aggregated Summary /campaign/report/:uuid
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aggregated-summary-campaignreportuuiddelivered" class="md-nav__link">
+    Aggregated Summary /campaign/report/:uuid/delivered
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aggregated-summary-campaignreportuuidfailed" class="md-nav__link">
+    Aggregated Summary /campaign/report/:uuid/failed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="viber-business-messaging-service-in-nepal">Viber Business Messaging service in Nepal</h1>
+<p><code>Last Updated - 16th February, 2023 Version 1.0.3</code></p>
+<h2 id="api-endpoints">API Endpoints</h2>
+<table>
+<thead>
+<tr>
+<th>Environment</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Production</td>
+<td>https://ent-api.sparrowsms.com/v1/viber/</td>
+</tr>
+<tr>
+<td>Sandbox</td>
+<td>Coming soon</td>
+</tr>
+</tbody>
+</table>
+<h2 id="available-apis">Available APIs</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>API</th>
+<th>HTTP Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Promotional Message Compose API</td>
+<td>message/compose/</td>
+<td>POST</td>
+</tr>
+<tr>
+<td>Transactional Message Compose API</td>
+<td>message/transactional/</td>
+<td>POST</td>
+</tr>
+<tr>
+<td>Campaign Status Report</td>
+<td>campaign/report/:compose-uuid/</td>
+<td>POST</td>
+</tr>
+</tbody>
+</table>
+<h2 id="message-types">Message types</h2>
+<p>All business accounts will be able to send any of the following message types based on their needs. Our message type selection contains text-based messages and richer content options,  which includes images, action button and file sharing. </p>
+<ul>
+<li><strong>Transactional</strong> : message contains rich text only</li>
+<li><strong>Promotional</strong> : message contains any of the following<ul>
+<li>Image</li>
+<li>Download file</li>
+<li>Action Button</li>
+</ul>
+</li>
+</ul>
+<h2 id="full-data-payload">Full Data Payload</h2>
+<pre><code>{
+   &quot;data&quot;  : {
+       &quot;text&quot;:  &quot;&quot;,
+       &quot;image&quot;: &quot;&quot;
+    }, 
+    &quot;action&quot; : {
+       &quot;url&quot; : &quot;&quot;,
+       &quot;caption&quot; : &quot;&quot;,
+       &quot;filename&quot;: &quot;&quot;
+   }, 
+   &quot;session&quot; : {
+       &quot;sender_name&quot;: &quot;&quot;,
+       &quot;tag&quot;: [&quot;tag1&quot;, &quot;tag2&quot;], 
+       &quot;recipients&quot;: [  … …  … ] 
+   }
+}
+</code></pre>
+<h2 id="description">Description</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th></th>
+<th>Value / Sample</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>data</td>
+<td></td>
+<td><pre>{ "text": "", "image": "" }</pre><strong>text</strong> - A text message to sent <br /><strong>image</strong> - Image attachment if to be included in the message</td>
+</tr>
+<tr>
+<td>action</td>
+<td></td>
+<td><pre>{ "url" : "", "caption" : "", "filename": "" } </pre></td>
+</tr>
+<tr>
+<td>session</td>
+<td>recipients (required)</td>
+<td>eg . <code>[no1,no2,no3…]</code> List of distinct recipients, receiving the message.</td>
+</tr>
+<tr>
+<td>session</td>
+<td>sender_name</td>
+<td>Sender Name as allowed by Viber agreement</td>
+</tr>
+<tr>
+<td>session</td>
+<td>tag</td>
+<td>List of Strings later used for reporting purposes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="coming-soon">Coming soon</h3>
+<ul>
+<li>ttl = Not defined Defaults to 48 hrs</li>
+<li>ttl = Value in seconds - Keep the max value in seconds equivalent to 48 hours</li>
+</ul>
+<h3 id="sms-fallback-coming-soon">SMS Fallback (Coming soon)</h3>
+<p><code>sms_fallback</code>
+Fallback SMS Content shall be forwarded if message wasn’t delivered within the TTL specified</p>
+<h2 id="response">Response</h2>
+<p>The following is a list of status responses that you will receive after sending a message</p>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Result Code</th>
+<th>HTTP Response</th>
+<th>Detailed description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OK</td>
+<td>00</td>
+<td>200</td>
+<td>Successfully sent.</td>
+</tr>
+<tr>
+<td>DRAFT</td>
+<td>01</td>
+<td>200</td>
+<td>Partial Success (Billing Error)</td>
+</tr>
+<tr>
+<td>DATA_ERROR</td>
+<td>11</td>
+<td>400</td>
+<td>Message Sending Failed</td>
+</tr>
+</tbody>
+</table>
+<h3 id="success-response">Success Response</h3>
+<pre><code>{
+   &quot;data&quot;: {
+       &quot;message&quot;: &quot;Queued successfully&quot;,
+       &quot;batch_id&quot;: &quot;5c32728e-340f-43b6-898d-d2b24e8e1426&quot;,
+       &quot;credits_required&quot;: 2,
+       &quot;valid_recipients&quot;: 2,
+       &quot;invalid_recipients&quot;: []
+   },
+   &quot;result&quot;: &quot;00&quot;,
+   &quot;status&quot;: &quot;OK&quot;
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Data Field</th>
+<th>Detailed description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>message</td>
+<td>Human readable message suggesting the status of the compose action</td>
+</tr>
+<tr>
+<td>batch_id</td>
+<td>Unique Identifier for the batch. Callback and DLR lookups are provided based upon this identifier</td>
+</tr>
+<tr>
+<td>credits_required</td>
+<td>Maximum credits required for the full batch to proceed</td>
+</tr>
+<tr>
+<td>valid_recipients</td>
+<td>Total Valid recipients found in the list of recipients sent during API request</td>
+</tr>
+<tr>
+<td>invalid_recipients</td>
+<td>List of invalid recipients that were included in the API request (mobile number invalid)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="error-response">Error Response</h3>
+<pre><code>{
+   &quot;data&quot;: {
+       &quot;errors&quot;: &quot;Billing Error&quot;
+   },
+   &quot;result&quot;: &quot;11&quot;,
+   &quot;status&quot;: &quot;DATA_ERROR&quot;
+}
+</code></pre>
+<h2 id="campaign-reports">Campaign Reports</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>API</th>
+<th>HTTP Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Aggregated Report</td>
+<td>campaign/report/<strong>:uuid</strong></td>
+<td>GET</td>
+<td>Aggregated summary of the campaign</td>
+</tr>
+<tr>
+<td>Delivered / Seen</td>
+<td>campaign/report/<strong>:uuid</strong>/delivery</td>
+<td>GET</td>
+<td>Either delivered or seen</td>
+</tr>
+<tr>
+<td>Expired / Rejected</td>
+<td>campaign/report/<strong>:uuid</strong>/failed</td>
+<td>GET</td>
+<td>Expired or Rejected due to invalid / unsubscribed numbers</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-format">Response Format</h3>
+<h4 id="aggregated-summary-campaignreportuuid">Aggregated Summary /campaign/report/:uuid</h4>
+<pre><code>{
+   &quot;data&quot;: {
+       &quot;uuid&quot;: &quot;b8d2516c-f78d-42d9-bdf4-6b5ec421402d&quot;,
+       &quot;sender_name&quot;: &quot;Sparrow Test One Way&quot;,
+       &quot;campaign_name&quot;: &quot;My Campaign&quot;,
+       &quot;msg_type&quot;: &quot;p&quot;,
+       &quot;text&quot;: &quot;Hello World&quot;,
+       &quot;image&quot;: &quot;https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg&quot;,
+       &quot;created_at&quot;: &quot;2022-08-21T18:00:55.400174+05:45&quot;,
+       &quot;tags&quot;: [
+           &quot;tag1&quot;,
+           &quot;tag2&quot;
+       ],
+       &quot;rejected&quot;: 1,
+       &quot;accepted&quot;: 0,
+       &quot;status&quot;: &quot;dispatched&quot;,
+       &quot;total&quot;: 1,
+       &quot;accepted_percentage&quot;: 0,
+       &quot;rejected_percentage&quot;: 100,
+       &quot;performed_by&quot;: {
+           &quot;uuid&quot;: &quot;a2773d0f-99d7-4aac-9937-7629e99bee8e&quot;,
+           &quot;name&quot;: &quot;A Natural Person&quot;,
+           &quot;email&quot;: &quot;someone@example.com&quot;
+       }
+   },
+   &quot;meta&quot;: {},
+   &quot;result&quot;: &quot;00&quot;,
+   &quot;status&quot;: &quot;OK&quot;
+}
+</code></pre>
+<h4 id="aggregated-summary-campaignreportuuiddelivered">Aggregated Summary /campaign/report/:uuid/delivered</h4>
+<pre><code>{
+   &quot;data&quot;: {
+       &quot;uuid&quot;: &quot;b8d2516c-f78d-42d9-bdf4-6b5ec421402d&quot;,
+       &quot;sender_name&quot;: &quot;Sparrow Test One Way&quot;,
+       &quot;campaign_name&quot;: &quot;My Campaign&quot;,
+       &quot;created_at&quot;: &quot;2022-08-21T18:00:55.400174+05:45&quot;,
+       &quot;records&quot;: {
+           &quot;delivered&quot;: [],
+           &quot;seen&quot;: []
+       }
+   },
+   &quot;meta&quot;: {},
+   &quot;result&quot;: &quot;00&quot;,
+   &quot;status&quot;: &quot;OK&quot;
+}
+</code></pre>
+<h4 id="aggregated-summary-campaignreportuuidfailed">Aggregated Summary /campaign/report/:uuid/failed</h4>
+<pre><code>{
+   &quot;data&quot;: {
+       &quot;uuid&quot;: &quot;b8d2516c-f78d-42d9-bdf4-6b5ec421402d&quot;,
+       &quot;sender_name&quot;: &quot;Sparrow Test One Way&quot;,
+       &quot;campaign_name&quot;: &quot;My Campaign&quot;,
+       &quot;created_at&quot;: &quot;2022-08-21T18:00:55.400174+05:45&quot;,
+       &quot;records&quot;: {
+           &quot;rejected&quot;: [],
+           &quot;expired&quot;: []
+       }
+   },
+   &quot;meta&quot;: {},
+   &quot;result&quot;: &quot;00&quot;,
+   &quot;status&quot;: &quot;OK&quot;
+}
+</code></pre>
+<!-- ## Session Messaging (Duplex API) - HTTP API
+Feature coming soon -->
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.4e0fa4ba.min.js"></script>
+      
+    
+  </body>
+</html>
