@@ -1,16 +1,27 @@
-# Send SMS WhatsApp Business API
+# Send Message WhatsApp Business API
 
 **Base URL:** `https://ent-api.sparrowsms.com/`
 
-The Sparrow WhatsApp API allows you to send automated messages to your customers using pre-approved WhatsApp templates.
+The Sparrow WhatsApp API allows you to send automated messages to your customers using pre-approved WhatsApp templates and session messages.
 
 ---
 
-## Send a Message
+## Send Message
 
 **Endpoint:** `POST /v1/whatsapp/messages/`
 
 This is a synchronous endpoint that validates your request and queues the message for delivery via the WhatsApp Business Platform.
+
+The Sparrow WhatsApp API allows you to send messages using two types:
+
+- **Template Messages:** Used to start a conversation with a customer at any time for Utility, Marketing, or Authentication purposes.
+- **Session Messages:** Free-form messages sent in response to a customer within a 24-hour window.
+
+---
+
+## A. Template Messages (Business-Initiated)
+
+Used to start a conversation at any time. Requires pre-approved templates.
 
 ### Request Body Fields
 
@@ -29,11 +40,9 @@ This is a synchronous endpoint that validates your request and queues the messag
 4. The order of values in the `parameters` array matters — the first value maps to `{{1}}`, the second to `{{2}}`, and so on.
 5. If your template includes an image, you must provide a publicly accessible link in the `media_url` field.
 
----
+### Implementation
 
-## Implementation
-
-### 1. Simple Text Message
+#### 1. Simple Text Message
 
 Used for simple text templates.
 
@@ -45,7 +54,7 @@ Used for simple text templates.
 }
 ```
 
-### 2. Parameterized Message
+#### 2. Parameterized Message
 
 Template text (reference):
 > `"Hello {{1}}, your payment of NPR {{2}} to {{3}} was successful."`
@@ -58,7 +67,7 @@ Template text (reference):
 }
 ```
 
-### 3. Media (Image Type) Template
+#### 3. Media (Image Type) Template
 
 Used for templates that contain an image header.
 
@@ -73,7 +82,82 @@ Used for templates that contain an image header.
 
 ---
 
-## Responses
+## B. Session Messages
+
+Use these to send free-form replies within a 24-hour window of the customer's last message. No template approval is required.
+
+### Primary Request Fields
+
+| Field | Type | Required | Description |
+|---|---|---|---|
+| `recipient` | string | Yes | The recipient's phone number in E.164 format (digits only). |
+| `message_type` | string | Yes | Must be `"TEXT"`, `"IMAGE"`, `"VIDEO"`, or `"DOCUMENT"`. |
+| `session_text` | string | Conditional | Required only if `message_type` is `TEXT`. The plain text message content. |
+| `session_media` | object | Conditional | Required if `message_type` is `IMAGE`, `VIDEO`, or `DOCUMENT`. Contains media details. |
+
+### `session_media` Object Fields
+
+| Field | Type | Required | Description |
+|---|---|---|---|
+| `url` | string | Yes | A direct, publicly accessible HTTPS link to the file. |
+| `caption` | string | No | Text that appears below the image, video, or document. |
+| `filename` | string | Conditional | Used for `DOCUMENT` only. The name the file will have when saved (e.g., `invoice.pdf`). |
+
+### Implementation
+
+#### Free Text
+
+```json
+{
+  "recipient": "9779812345678",
+  "message_type": "TEXT",
+  "session_text": "Hello! How can we help you today?"
+}
+```
+
+#### Image Session Message
+
+```json
+{
+  "recipient": "9779812345678",
+  "message_type": "IMAGE",
+  "session_media": {
+    "url": "https://example.com/image.png",
+    "caption": "Check out our new catalog!"
+  }
+}
+```
+
+#### Video Session Message
+
+```json
+{
+  "recipient": "9779812345612",
+  "message_type": "VIDEO",
+  "session_media": {
+    "url": "https://example.com/demo.mp4",
+    "caption": "Product Walkthrough"
+  }
+}
+```
+
+#### Document Session Message
+
+```json
+{
+  "recipient": "9779812345612",
+  "message_type": "DOCUMENT",
+  "session_media": {
+    "url": "https://example.com/sample.pdf",
+    "caption": "Your monthly report",
+    "filename": "report_january.pdf"
+  }
+}
+```
+
+---
+
+## C. Responses
 
 ### Success (200 OK)
 
@@ -104,9 +188,21 @@ The message has been accepted by the gateway and queued for delivery.
 
 ---
 
-## Rate Limit
+## D. Rate Limit
 
 - **3 requests per second** per account. Exceeding this will return `HTTP 429 Too Many Requests`.
+
+---
+
+## E. Supported Media Specifications
+
+All media files must be hosted on a public HTTPS server and adhere to the following constraints:
+
+| Media Category | Supported Formats | Max Size |
+|---|---|---|
+| Image | `.jpeg`, `.png` | 5 MB |
+| Video | `.mp4`, `.3gp` | 16 MB |
+| Document | `.pdf`, `.txt`, `.csv`, `.doc`, `.docx`, `.xls`, `.xlsx`, `.ppt`, `.pptx` | 100 MB |
 
 ---
 
