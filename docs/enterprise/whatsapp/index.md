@@ -67,18 +67,41 @@ Template text (reference):
 }
 ```
 
-#### 3. Media (Image Type) Template
+#### 3. Media Template
 
-Used for templates that contain an image header.
+##### i. Image / Video Template
+
+Used for templates that contain an image or video header.
 
 ```json
 {
   "template_id": "WWT26AY8GQYCM",
   "recipient": "97798XXXXXXXX",
-  "media_url": "https://example.com/images/map_kathmandu.jpg",
-  "parameters": []
+  "media_url": "https://example.com/images/map_kathmandu.jpg"
 }
 ```
+
+##### ii. Document Template
+
+Used for sending template messages containing a document.
+
+```json
+{
+  "template_id": "WWT26AJWKH68A",
+  "recipient": "97798XXXXXXXX",
+  "media_url": "https://example.com/media.pdf",
+  "filename": "file_test_example.pdf"
+}
+```
+
+### 4. Media Header Specifications
+
+Used when your `template_id` was created with an Image, Video, or Document header.
+
+| Field | Type | Required | Description |
+|---|---|---|---|
+| `media_url` | string | Yes | A direct, publicly accessible HTTPS link to the file (e.g., `.jpg`, `.mp4`, `.pdf`). |
+| `filename` | string | Conditional | Required for `DOCUMENT` only. The display name the recipient sees when saving the file (e.g., `Monthly_Invoice.pdf`). |
 
 ---
 
@@ -105,7 +128,7 @@ Use these to send free-form replies within a 24-hour window of the customer's la
 
 ### Implementation
 
-#### Free Text
+#### 1. Free Text
 
 ```json
 {
@@ -115,7 +138,7 @@ Use these to send free-form replies within a 24-hour window of the customer's la
 }
 ```
 
-#### Image Session Message
+#### 2. Image Session Message
 
 ```json
 {
@@ -128,7 +151,7 @@ Use these to send free-form replies within a 24-hour window of the customer's la
 }
 ```
 
-#### Video Session Message
+#### 3. Video Session Message
 
 ```json
 {
@@ -141,7 +164,7 @@ Use these to send free-form replies within a 24-hour window of the customer's la
 }
 ```
 
-#### Document Session Message
+#### 4. Document Session Message
 
 ```json
 {

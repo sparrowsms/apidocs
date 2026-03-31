@@ -38,9 +38,10 @@ Sparrow SMS has recently launched its [enterprise messaging suite](https://ent.s
 
 - [Viber Business Messaging service for Nepal](enterprise/viber/)
 - [International SMS](enterprise/international-sms)
+- [Whatsapp Messaging service](enterprise/whatsapp)
+
 <!-- - [SecondFactor as Service](enterprise/secondfactor) -->
 - Viber Bot and BOT applications (W.I.P)
-- Whatsapp Messaging service (Planned)
 
 [Explore the Enterprise Messaging API Documentation](enterprise/)
 
