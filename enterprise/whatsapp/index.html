@@ -1,0 +1,1628 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Sparrow SMS Official Developers API.">
+      
+      
+        <meta name="author" content="Sparrow SMS (@sparrowsms)">
+      
+      
+        <link rel="canonical" href="http://api.sparrowsms.com/enterprise/whatsapp/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Send Message WhatsApp Business API - Sparrow SMS</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#send-message-whatsapp-business-api" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Sparrow SMS" class="md-header__button md-logo" aria-label="Sparrow SMS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sparrow SMS
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Send Message WhatsApp Business API
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="http://github.com/sparrowsms/apidocs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Sparrow SMS" class="md-nav__button md-logo" aria-label="Sparrow SMS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Sparrow SMS
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="http://github.com/sparrowsms/apidocs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SMS API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SMS API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sms/documentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sms/outgoing_sendsms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Push SMS (MT)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sms/outgoing_credits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Credits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sms/incoming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pull SMS (MO)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sms/examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Examples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sms/examples_outgoing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Push SMS (MT) Examples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sms/examples_credits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Credits Examples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sms/examples_incoming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pull SMS (MO) Examples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enterprise Messaging Suite
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Enterprise Messaging Suite
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../authentication-flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authentication Flow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../authentication-flow/#error-messages" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authentication Errors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Viber Messaging
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Viber Messaging
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../viber/business-message/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Business Messaging
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../viber/dlr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DLR Reports
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../secondfactor-as-service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SecondFactor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../international-sms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    International SMS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#send-message" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Send Message
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-template-messages-business-initiated" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A. Template Messages (Business-Initiated)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A. Template Messages (Business-Initiated)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-body-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Request Body Fields
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integration-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-simple-text-message" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Simple Text Message
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-parameterized-message" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Parameterized Message
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-media-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Media Template
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Media Template">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#i-image-video-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        i. Image / Video Template
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ii-document-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ii. Document Template
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-media-header-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Media Header Specifications
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#b-session-messages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B. Session Messages
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="B. Session Messages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#primary-request-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Primary Request Fields
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session_media-object-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        session_media Object Fields
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-free-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Free Text
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-image-session-message" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Image Session Message
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-video-session-message" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Video Session Message
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-document-session-message" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Document Session Message
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c-responses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C. Responses
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="C. Responses">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#success-200-ok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Success (200 OK)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error Codes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d-rate-limit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D. Rate Limit
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#e-supported-media-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        E. Supported Media Specifications
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#webhook-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Webhook Details
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Webhook Details">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#payload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Payload
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#payload-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Payload Fields
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="send-message-whatsapp-business-api">Send Message WhatsApp Business API</h1>
+<p><strong>Base URL:</strong> <code>https://ent-api.sparrowsms.com/</code></p>
+<p>The Sparrow WhatsApp API allows you to send automated messages to your customers using pre-approved WhatsApp templates and session messages.</p>
+<hr />
+<h2 id="send-message">Send Message</h2>
+<p><strong>Endpoint:</strong> <code>POST /v1/whatsapp/messages/</code></p>
+<p>This is a synchronous endpoint that validates your request and queues the message for delivery via the WhatsApp Business Platform.</p>
+<p>The Sparrow WhatsApp API allows you to send messages using two types:</p>
+<ul>
+<li><strong>Template Messages:</strong> Used to start a conversation with a customer at any time for Utility, Marketing, or Authentication purposes.</li>
+<li><strong>Session Messages:</strong> Free-form messages sent in response to a customer within a 24-hour window.</li>
+</ul>
+<hr />
+<h2 id="a-template-messages-business-initiated">A. Template Messages (Business-Initiated)</h2>
+<p>Used to start a conversation at any time. Requires pre-approved templates.</p>
+<h3 id="request-body-fields">Request Body Fields</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>template_id</code></td>
+<td>string</td>
+<td>Yes</td>
+<td>The unique identifier of the approved WhatsApp template.</td>
+</tr>
+<tr>
+<td><code>recipient</code></td>
+<td>string</td>
+<td>Yes</td>
+<td>The recipient's phone number in E.164 format (digits only).</td>
+</tr>
+<tr>
+<td><code>parameters</code></td>
+<td>array</td>
+<td>Conditional</td>
+<td>Used to replace placeholders (<code>{{1}}</code>, <code>{{2}}</code>, etc.) in your template. Required if the template contains placeholders.</td>
+</tr>
+<tr>
+<td><code>media_url</code></td>
+<td>string</td>
+<td>Conditional</td>
+<td>Required if the template is an image type template.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="integration-rules">Integration Rules</h3>
+<ol>
+<li>Numbers must contain digits only. Including a leading <code>+</code>, spaces, or special characters will cause a validation error (e.g., use <code>9779800000000</code>, not <code>+977 980-0000000</code>).</li>
+<li>Messages can only be sent using templates with an <strong>"APPROVED"</strong> status.</li>
+<li>The number of items in the <code>parameters</code> array must exactly match the number of placeholders in your template.</li>
+<li>The order of values in the <code>parameters</code> array matters — the first value maps to <code>{{1}}</code>, the second to <code>{{2}}</code>, and so on.</li>
+<li>If your template includes an image, you must provide a publicly accessible link in the <code>media_url</code> field.</li>
+</ol>
+<h3 id="implementation">Implementation</h3>
+<h4 id="1-simple-text-message">1. Simple Text Message</h4>
+<p>Used for simple text templates.</p>
+<pre><code class="language-json">{
+  &quot;template_id&quot;: &quot;WWT49T8GQYCM&quot;,
+  &quot;recipient&quot;: &quot;97798XXXXXXXX&quot;,
+  &quot;parameters&quot;: []
+}
+</code></pre>
+<h4 id="2-parameterized-message">2. Parameterized Message</h4>
+<p>Template text (reference):</p>
+<blockquote>
+<p><code>"Hello {{1}}, your payment of NPR {{2}} to {{3}} was successful."</code></p>
+</blockquote>
+<pre><code class="language-json">{
+  &quot;template_id&quot;: &quot;WWT49T8GQYCM&quot;,
+  &quot;recipient&quot;: &quot;97798XXXXXXXX&quot;,
+  &quot;parameters&quot;: [&quot;Niraj Gurung&quot;, &quot;2500&quot;, &quot;Daraz Nepal&quot;]
+}
+</code></pre>
+<h4 id="3-media-template">3. Media Template</h4>
+<h5 id="i-image-video-template">i. Image / Video Template</h5>
+<p>Used for templates that contain an image or video header.</p>
+<pre><code class="language-json">{
+  &quot;template_id&quot;: &quot;WWT26AY8GQYCM&quot;,
+  &quot;recipient&quot;: &quot;97798XXXXXXXX&quot;,
+  &quot;media_url&quot;: &quot;https://example.com/images/map_kathmandu.jpg&quot;
+}
+</code></pre>
+<h5 id="ii-document-template">ii. Document Template</h5>
+<p>Used for sending template messages containing a document.</p>
+<pre><code class="language-json">{
+  &quot;template_id&quot;: &quot;WWT26AJWKH68A&quot;,
+  &quot;recipient&quot;: &quot;97798XXXXXXXX&quot;,
+  &quot;media_url&quot;: &quot;https://example.com/media.pdf&quot;,
+  &quot;filename&quot;: &quot;file_test_example.pdf&quot;
+}
+</code></pre>
+<h3 id="4-media-header-specifications">4. Media Header Specifications</h3>
+<p>Used when your <code>template_id</code> was created with an Image, Video, or Document header.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>media_url</code></td>
+<td>string</td>
+<td>Yes</td>
+<td>A direct, publicly accessible HTTPS link to the file (e.g., <code>.jpg</code>, <code>.mp4</code>, <code>.pdf</code>).</td>
+</tr>
+<tr>
+<td><code>filename</code></td>
+<td>string</td>
+<td>Conditional</td>
+<td>Required for <code>DOCUMENT</code> only. The display name the recipient sees when saving the file (e.g., <code>Monthly_Invoice.pdf</code>).</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="b-session-messages">B. Session Messages</h2>
+<p>Use these to send free-form replies within a 24-hour window of the customer's last message. No template approval is required.</p>
+<h3 id="primary-request-fields">Primary Request Fields</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>recipient</code></td>
+<td>string</td>
+<td>Yes</td>
+<td>The recipient's phone number in E.164 format (digits only).</td>
+</tr>
+<tr>
+<td><code>message_type</code></td>
+<td>string</td>
+<td>Yes</td>
+<td>Must be <code>"TEXT"</code>, <code>"IMAGE"</code>, <code>"VIDEO"</code>, or <code>"DOCUMENT"</code>.</td>
+</tr>
+<tr>
+<td><code>session_text</code></td>
+<td>string</td>
+<td>Conditional</td>
+<td>Required only if <code>message_type</code> is <code>TEXT</code>. The plain text message content.</td>
+</tr>
+<tr>
+<td><code>session_media</code></td>
+<td>object</td>
+<td>Conditional</td>
+<td>Required if <code>message_type</code> is <code>IMAGE</code>, <code>VIDEO</code>, or <code>DOCUMENT</code>. Contains media details.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="session_media-object-fields"><code>session_media</code> Object Fields</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>url</code></td>
+<td>string</td>
+<td>Yes</td>
+<td>A direct, publicly accessible HTTPS link to the file.</td>
+</tr>
+<tr>
+<td><code>caption</code></td>
+<td>string</td>
+<td>No</td>
+<td>Text that appears below the image, video, or document.</td>
+</tr>
+<tr>
+<td><code>filename</code></td>
+<td>string</td>
+<td>Conditional</td>
+<td>Used for <code>DOCUMENT</code> only. The name the file will have when saved (e.g., <code>invoice.pdf</code>).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="implementation_1">Implementation</h3>
+<h4 id="1-free-text">1. Free Text</h4>
+<pre><code class="language-json">{
+  &quot;recipient&quot;: &quot;9779812345678&quot;,
+  &quot;message_type&quot;: &quot;TEXT&quot;,
+  &quot;session_text&quot;: &quot;Hello! How can we help you today?&quot;
+}
+</code></pre>
+<h4 id="2-image-session-message">2. Image Session Message</h4>
+<pre><code class="language-json">{
+  &quot;recipient&quot;: &quot;9779812345678&quot;,
+  &quot;message_type&quot;: &quot;IMAGE&quot;,
+  &quot;session_media&quot;: {
+    &quot;url&quot;: &quot;https://example.com/image.png&quot;,
+    &quot;caption&quot;: &quot;Check out our new catalog!&quot;
+  }
+}
+</code></pre>
+<h4 id="3-video-session-message">3. Video Session Message</h4>
+<pre><code class="language-json">{
+  &quot;recipient&quot;: &quot;9779812345612&quot;,
+  &quot;message_type&quot;: &quot;VIDEO&quot;,
+  &quot;session_media&quot;: {
+    &quot;url&quot;: &quot;https://example.com/demo.mp4&quot;,
+    &quot;caption&quot;: &quot;Product Walkthrough&quot;
+  }
+}
+</code></pre>
+<h4 id="4-document-session-message">4. Document Session Message</h4>
+<pre><code class="language-json">{
+  &quot;recipient&quot;: &quot;9779812345612&quot;,
+  &quot;message_type&quot;: &quot;DOCUMENT&quot;,
+  &quot;session_media&quot;: {
+    &quot;url&quot;: &quot;https://example.com/sample.pdf&quot;,
+    &quot;caption&quot;: &quot;Your monthly report&quot;,
+    &quot;filename&quot;: &quot;report_january.pdf&quot;
+  }
+}
+</code></pre>
+<hr />
+<h2 id="c-responses">C. Responses</h2>
+<h3 id="success-200-ok">Success (200 OK)</h3>
+<p>The message has been accepted by the gateway and queued for delivery.</p>
+<pre><code class="language-json">{
+  &quot;data&quot;: {
+    &quot;message_id&quot;: &quot;WWM2656VREEVY&quot;
+  },
+  &quot;meta&quot;: {},
+  &quot;result&quot;: &quot;00&quot;,
+  &quot;status&quot;: &quot;OK&quot;
+}
+</code></pre>
+<h3 id="error-codes">Error Codes</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Error Message</th>
+<th>Cause / Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>400</td>
+<td>The recipient number must contain digits only.</td>
+<td>Remove the <code>+</code> sign, spaces, or dashes from the phone number.</td>
+</tr>
+<tr>
+<td>400</td>
+<td>Approved template not found</td>
+<td>The <code>template_id</code> is misspelled or the template is not yet approved.</td>
+</tr>
+<tr>
+<td>400</td>
+<td>This field is required.</td>
+<td>You are missing the <code>recipient</code> or <code>template_id</code> in your JSON body.</td>
+</tr>
+<tr>
+<td>400</td>
+<td>Media_url is required</td>
+<td>For image templates, you need to send a separate <code>media_url</code>.</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Authentication credentials... not provided.</td>
+<td>The Authorization header is missing or incorrect.</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Invalid token header.</td>
+<td>The API token provided is invalid.</td>
+</tr>
+<tr>
+<td>400</td>
+<td>Parameter count mismatch</td>
+<td>The number of values in your array does not match the <code>{{n}}</code> placeholders.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="d-rate-limit">D. Rate Limit</h2>
+<ul>
+<li><strong>3 requests per second</strong> per account. Exceeding this will return <code>HTTP 429 Too Many Requests</code>.</li>
+</ul>
+<hr />
+<h2 id="e-supported-media-specifications">E. Supported Media Specifications</h2>
+<p>All media files must be hosted on a public HTTPS server and adhere to the following constraints:</p>
+<table>
+<thead>
+<tr>
+<th>Media Category</th>
+<th>Supported Formats</th>
+<th>Max Size</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Image</td>
+<td><code>.jpeg</code>, <code>.png</code></td>
+<td>5 MB</td>
+</tr>
+<tr>
+<td>Video</td>
+<td><code>.mp4</code>, <code>.3gp</code></td>
+<td>16 MB</td>
+</tr>
+<tr>
+<td>Document</td>
+<td><code>.pdf</code>, <code>.txt</code>, <code>.csv</code>, <code>.doc</code>, <code>.docx</code>, <code>.xls</code>, <code>.xlsx</code>, <code>.ppt</code>, <code>.pptx</code></td>
+<td>100 MB</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="webhook-details">Webhook Details</h2>
+<p>When webhook is enabled, your webhook URL will receive HTTP POST requests whenever a WhatsApp message status changes or a user replies to a message.</p>
+<h3 id="payload">Payload</h3>
+<pre><code class="language-json">[
+  {
+    &quot;message_id&quot;: &quot;message_id&quot;,
+    &quot;wa_id&quot;: &quot;wamid.HBgNOTc3OT...&quot;,
+    &quot;recipient&quot;: &quot;97798XXXX&quot;,
+    &quot;status&quot;: &quot;delivered&quot;,
+    &quot;timestamp&quot;: &quot;1769059620&quot;,
+    &quot;message&quot;: {}
+  }
+]
+</code></pre>
+<h3 id="payload-fields">Payload Fields</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>message_id</code></td>
+<td>string | null</td>
+<td>Unique identifier for messages (can be null for incoming messages).</td>
+</tr>
+<tr>
+<td><code>wa_id</code></td>
+<td>string</td>
+<td>WhatsApp message ID.</td>
+</tr>
+<tr>
+<td><code>recipient</code></td>
+<td>string</td>
+<td>User phone number (E.164 format).</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td>string</td>
+<td>Statuses: <code>sent</code>, <code>delivered</code>, <code>read</code>, <code>failed</code>. For incoming: <code>received</code>.</td>
+</tr>
+<tr>
+<td><code>timestamp</code></td>
+<td>string</td>
+<td>Unix timestamp.</td>
+</tr>
+<tr>
+<td><code>message</code></td>
+<td>object</td>
+<td>Present only for incoming messages.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

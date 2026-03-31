@@ -1,0 +1,11 @@
+.md-header{
+  background:#350001;
+}
+h2{
+  color: #350001;
+  font-weight:bold;
+}
+
+a:hover{
+  color: #E08036;
+}
