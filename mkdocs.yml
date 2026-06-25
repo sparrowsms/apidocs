@@ -23,6 +23,8 @@ nav:
       - Business Messaging : 'enterprise/viber/business-message.md'
       - DLR Reports : 'enterprise/viber/dlr.md'
     # - Viber BOT API : 'enterprise/viber/viber-bot.md'
+    - WhatsApp Messaging:
+      - Business Messaging : 'enterprise/whatsapp/index.md'
     - SecondFactor: 'enterprise/secondfactor-as-service/index.md'
     - International SMS: 'enterprise/international-sms/index.md'
 extra_css:
